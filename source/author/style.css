@@ -10,8 +10,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
-  overflow: hidden;
+  padding: 20px,
 }
 
 .card {
@@ -42,6 +41,10 @@ body {
 
 .card[data-state="#experience"] {
   height: 550px;
+  ::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .card.is-active .card-header {
