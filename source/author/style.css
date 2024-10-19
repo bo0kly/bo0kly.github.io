@@ -26,6 +26,11 @@ body {
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+.card::-webkit-scrollbar {
+  display: none;
 }
 
 .card[data-state="#about"] {
