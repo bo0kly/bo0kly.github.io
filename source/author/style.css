@@ -46,12 +46,13 @@ body {
 
 .card[data-state="#experience"] {
   height: 550px;
-  ::-webkit-scrollbar {
-  display: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
+.card[data-state="#experience"]::-webkit-scrollbar {
+  display: none;
+}
+	
 .card.is-active .card-header {
   height: 80px;
 }
