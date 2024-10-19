@@ -355,3 +355,110 @@ body {
   font-family: "Jost", sans-serif;
   transition: 0.3s;
 }
+
+.underline {
+  --line: #646B8C;
+  --color: #2B3044;
+  text-decoration: none;
+  color: var(--color);
+  position: relative;
+}
+
+.underline {
+  width: 140px;
+  margin: 16px 0;
+}
+
+.underline span {
+  background-image: linear-gradient(0deg, var(--line) 0%, var(--line) 100%);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: var(--background-size, 100%) 1px;
+  transition: background-size 0.2s linear var(--background-delay, 0.15s);
+  
+  line-height: 20px;
+  transform: translateZ(0);
+}
+.underline svg {
+  vertical-align: top;
+  display: inline;
+  line-height: 1;
+  width: 13px;
+  height: 20px;
+  position: relative;
+  left: -2px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1px;
+  stroke: var(--line);
+  stroke-dasharray: 7.95 30;
+  stroke-dashoffset: var(--stroke-dashoffset, 46);
+  transition: stroke-dashoffset var(--stroke-duration, 0.15s) var(--stroke-easing, linear) var(--stroke-delay, 0s);
+}
+.underline:hover {
+  --background-size: 0%;
+  --background-delay: 0s;
+  --stroke-dashoffset: 26;
+  --stroke-duration: .3s;
+  --stroke-easing: cubic-bezier(.3, 1.5, .5, 1);
+  --stroke-delay: .195s;
+}
+
+#bg1,
+#bg2 {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	-webkit-transition: opacity 1s;
+	transition: opacity 8s;
+}
+
+#bg1 {
+	background: -webkit-linear-gradient(top, #6a8dff, #000b1a);
+	background: linear-gradient(top, #6a8dff, #000b1a);
+}
+
+#bg2 {
+	opacity: 0;
+	background: -webkit-linear-gradient(top, #2bb61e, #0c1a30);
+	background: linear-gradient(top, rgb(25, 50, 95), rgb(0, 20, 45));
+} 
+.particle {
+	opacity: 0;
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.5);
+	-webkit-animation: particleAnim 3s ease-in-out infinite;
+	animation: particleAnim 3s ease-in-out infinite;
+	border-radius: 100%;
+}
+
+@-webkit-keyframes particleAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(-0%);
+	}
+	15% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-1500%);
+	}
+}
+
+@keyframes particleAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(-0%);
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-1500%);
+	}
+}
